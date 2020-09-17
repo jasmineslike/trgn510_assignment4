@@ -1,6 +1,5 @@
 import sys
 import re
-import pandas as pd
 import gffutils
 import os
 
