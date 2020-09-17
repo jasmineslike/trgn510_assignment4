@@ -5,25 +5,30 @@ Create a program called ensg2hugo.py that takes a comma-delimited file as an arg
 ## Installation
 1. To run this program, you need to install it first:\
    Type: `git clone https://github.com/jasmineslike/trgn510_assignment4.git`
-2. Store all files in the same folder, this program should run in the terminal\
+2. Store all files in the same folder, this program should run in the terminal
 3. This program will search gene_name in `Homo_sapiens.GRCh37.75.gtf`:\
    Type: `wget http://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz`\
    Type: `gunzip Homo_sapiens.GRCh37.75.gtf.gz`
 4. This program provides the Unit Test file `expres.anal.csv`:\
-   Type: `wget https://github.com/davcraig75/unit/expres.anal.csv`
+   Type: `git clone https://github.com/davcraig75/unit`\
+   Type: `cd unit/`\
+   Type: `mv expres.anal.csv ~/trgn510_assignment4`---- `~` is your home directory\
+   Type: `cd ..`\
+   Type: `rm -rf unit`
+   
 
 ## Usage
-1. You need to pip install the library:\
+1. You need to install the GTF library:\
    Type: `pip install gffutils`\
    IF SHOWS `PemissionError: Pemission denied`, Type: `python -m pip install --user gffutils`
 2. Run the program in the command-line:\
-   type: `python ensg2hugo.py -f2 expres.anal.csv >expres.anal.hugo.csv`\
-   * It will make the output into a file called `expres.anal.hugo.csv`
+   type: `python ensg2hugo.py -f2 expres.anal.csv >expres.anal.hugo.csv`
    * It allow an option `-f [0-9]` where `-f2` would pick the 2nd column. If there is no `-f` then the first column is used
+   * It will make the output into a file called `expres.anal.hugo.csv`
 
 ## Dependencies
-1. wget
-2. os:
+1. wget:download file with link
+2. os: operating system
 3. re: regular expression
 4. gffutils: read gtf file
 5. dictionary: a list as a dictionary to look up substitutions.
